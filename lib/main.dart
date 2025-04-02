@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async'; // Importar Timer
 import 'screens/pets_screen.dart'; // Asegúrate de tener importado PetsScreen
+import 'screens/profile_screen.dart';
+
 
 void main() {
   runApp(const PetVibeApp());
@@ -125,11 +127,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Aquí ya no ponemos `const` en los StatefulWidgets
   static List<Widget> _widgetOptions = <Widget>[
-    const Center(child: Text('Inicio', style: TextStyle(fontSize: 18, color: Colors.white))),
-    PetsScreen(), // Aquí ya no es const
-    const Center(child: Text('Calendario', style: TextStyle(fontSize: 18, color: Colors.white))),
-    const Center(child: Text('Perfil', style: TextStyle(fontSize: 18, color: Colors.white))),
-  ];
+  const Center(child: Text('Inicio', style: TextStyle(fontSize: 18, color: Colors.white))),
+  PetsScreen(),
+  const Center(child: Text('Calendario', style: TextStyle(fontSize: 18, color: Colors.white))),
+  ProfileScreen(), // Aquí se cambia por ProfileScreen()
+];
+
 
   void _onItemTapped(int index) {
     setState(() {
